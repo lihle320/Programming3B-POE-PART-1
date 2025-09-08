@@ -3,6 +3,14 @@
 
 Welcome to the Issue Reporting System, a user-friendly Windows Forms application designed to streamline the process of reporting and managing community issues. With a focus on ease of use and comprehensive functionality, this application allows users to submit detailed reports, including file attachments, ensuring that all relevant information is captured effectively.
 
+## Startup Tasks
+
+On startup, the application presents the user with three tasks:
+
+1. **Report Issues** (to be implemented): This feature will allow users to report any issues they encounter.
+2. **Local Events and Announcements** (to be implemented later): Users will be able to stay updated on local events and announcements.
+3. **Service Request Status** (to be implemented later): Users can check the status of their service requests.
+
 ## Features
 
 - **Issue Reporting**: Easily submit detailed issue reports that include location, category, and a thorough description of the problem.
