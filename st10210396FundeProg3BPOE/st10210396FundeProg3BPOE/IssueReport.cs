@@ -11,12 +11,15 @@ namespace st10210396FundeProg3BPOE
         public string Location { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
-        public List<string> Attachments { get; set; }
+        public LinkedList<string> Attachments { get; set; }
+        public DateTime ReportDate { get; set; } 
+        public int ReportNumber { get; set; }
 
         public IssueReport()
         {
-            // Attachments is a list to hold file names or paths
-            Attachments = new List<string>(); //(Rohman, 2023)
+            // Attachments is a LinkedList to hold file names or paths
+            Attachments = new LinkedList<string>();
+            ReportDate = DateTime.Now; // Set default date to current date/time
         }
     }
 }

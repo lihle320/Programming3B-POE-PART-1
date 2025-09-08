@@ -12,43 +12,41 @@ namespace st10210396FundeProg3BPOE
 {
     public partial class ReportIssues : Form
     {
+        private LinkedList<string> currentAttachments; // LinkedList to store attachments for the current report
+        private LinkedList<IssueReport> issueReports; // LinkedList to store reported issues
+        private int reportCounter = 0; // Counter to track report numbers
 
-        private List<string> currentAttachments; // List to store attachments for the current report
-
-        private List<IssueReport> issueReports; // List to store reported issues (Rohman, 2023)
         public ReportIssues()
         {
-            currentAttachments = new List<string>();
-            issueReports = new List<IssueReport>();
-         
+            currentAttachments = new LinkedList<string>();
+            issueReports = new LinkedList<IssueReport>();
             InitializeComponent();
         }
-       
-          
 
-        private void attachFileBtn_Click(object sender, EventArgs e) 
+        private void attachFileBtn_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog()) //(Microsoft Learn, n.d.). 
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Image files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*"; //(Microsoft Learn, n.d.). 
+                openFileDialog.Filter = "Image files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
                 openFileDialog.Multiselect = true; // Allow multiple file selection
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK) //(Microsoft Learn, n.d.). 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (string filePath in openFileDialog.FileNames) //(Microsoft Learn, n.d.). 
+                    foreach (string filePath in openFileDialog.FileNames)
                     {
-                        AttachFile(filePath); //(Microsoft Learn, n.d.). 
+                        AttachFile(filePath);
                     }
                 }
             }
         }
-        private void AttachFile(string filePath) //(Microsoft Learn, n.d.). 
+
+        private void AttachFile(string filePath)
         {
-            // Add the file to current attachments
-            currentAttachments.Add(filePath);
+            // Add the file to current attachments using LinkedList
+            currentAttachments.AddLast(filePath);
 
             // Optional: Show the attached file name in the UI
-            MessageBox.Show($"File attached: {System.IO.Path.GetFileName(filePath)}", //(Microsoft Learn, 2025).
+            MessageBox.Show($"File attached: {System.IO.Path.GetFileName(filePath)}",
                            "Attachment Added",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Information);
@@ -59,21 +57,29 @@ namespace st10210396FundeProg3BPOE
             // Validate inputs
             if (string.IsNullOrWhiteSpace(LocationtextBox.Text))
             {
-                MessageBox.Show("Please enter a location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //(Microsoft Learn, 2025). 
+                MessageBox.Show("Please enter a location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (CategoryComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Please select a category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //(Microsoft Learn, 2025). 
+                MessageBox.Show("Please select a category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(DescriptionrichTextBox.Text))
             {
-                MessageBox.Show("Please enter a description.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //(Microsoft Learn, 2025). 
+                MessageBox.Show("Please enter a description.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Get current date and time
+            DateTime currentDate = DateTime.Now;
+            string formattedDate = currentDate.ToString("dddd, dd MMMM yyyy");
+            string formattedTime = currentDate.ToString("hh:mm tt");
+
+            // Increment report counter
+            reportCounter++;
 
             // Create a new issue report with attachments
             IssueReport report = new IssueReport
@@ -81,10 +87,13 @@ namespace st10210396FundeProg3BPOE
                 Location = LocationtextBox.Text,
                 Category = CategoryComboBox.SelectedItem.ToString(),
                 Description = DescriptionrichTextBox.Text,
-                Attachments = new List<string>(currentAttachments) // Copy current attachments
+                Attachments = new LinkedList<string>(currentAttachments), // Copy current attachments
+                ReportDate = currentDate, // Store the report date
+                ReportNumber = reportCounter // Store the report number
             };
 
-            issueReports.Add(report);
+            // Add report to LinkedList
+            issueReports.AddLast(report);
 
             // Build attachment information for the message
             string attachmentInfo;
@@ -98,15 +107,19 @@ namespace st10210396FundeProg3BPOE
                 attachmentInfo = "None";
             }
 
-            // Show the details in a message box
+            // Show the details in a message box with date, time, and report number
             string message = $"Issue Reported!\n\n" +
+                             $"Report:{report.ReportNumber}\n" +
+                             $"Date: {formattedDate}\n" +
+                             $"Time: {formattedTime}\n\n" +
                              $"Location: {report.Location}\n" +
                              $"Category: {report.Category}\n" +
                              $"Description: {report.Description}\n\n" +
                              $"Attachments:\n{attachmentInfo}";
 
-            MessageBox.Show(message, "Report Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information); //(Microsoft Learn, 2025). 
-            MessageBox.Show("Thank you for your submission! We appreciate you taking the time to report this issue. Our team will review it and get back to you as soon as possible.", "Thank You", MessageBoxButtons.OK, MessageBoxIcon.Information); //(Microsoft Learn, 2025). 
+            MessageBox.Show(message, "Report Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Thank you for your submission! We appreciate you taking the time to report this issue. Our team will review it and get back to you as soon as possible.", "Thank You", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             // Clear the fields for the next report
             ClearFields();
         }
@@ -117,6 +130,67 @@ namespace st10210396FundeProg3BPOE
             CategoryComboBox.SelectedIndex = -1;   // Clear the selected category
             DescriptionrichTextBox.Clear();   // Clear the description rich text box
             currentAttachments.Clear();       // Clear current attachments
+        }
+
+        private void DisplayAllReports()
+        {
+            if (issueReports.Count == 0)
+            {
+                MessageBox.Show("No issue reports have been submitted yet.", "No Reports", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("All Issue Reports:");
+            sb.AppendLine("==================");
+            sb.AppendLine();
+
+            // Iterate through the LinkedList
+            LinkedListNode<IssueReport> currentNode = issueReports.First;
+            int count = 1;
+
+            while (currentNode != null)
+            {
+                IssueReport report = currentNode.Value;
+
+                sb.AppendLine($"Report {report.ReportNumber}");
+                sb.AppendLine($"------------");
+                sb.AppendLine($"Date: {report.ReportDate:dddd, dd,MMMM, yyyy}");
+                sb.AppendLine($"Time: {report.ReportDate:hh:mm tt}");
+                sb.AppendLine($"Location: {report.Location}");
+                sb.AppendLine($"Category: {report.Category}");
+                sb.AppendLine($"Description: {report.Description}");
+
+                // Add attachments information
+                sb.Append("Attachments: ");
+                if (report.Attachments.Count > 0)
+                {
+                    sb.AppendLine();
+                    foreach (string attachment in report.Attachments)
+                    {
+                        sb.AppendLine($"  • {System.IO.Path.GetFileName(attachment)}");
+                    }
+                }
+                else
+                {
+                    sb.AppendLine("None");
+                }
+
+                sb.AppendLine();
+                sb.AppendLine();
+
+                // Move to next node
+                currentNode = currentNode.Next;
+                count++;
+            }
+
+            // Display the reports in a message box
+            MessageBox.Show(sb.ToString(), "All Issue Reports", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void viewReportsBtn_Click(object sender, EventArgs e)
+        {
+            DisplayAllReports();
         }
 
         private void NofileText_Click(object sender, EventArgs e)
@@ -130,17 +204,17 @@ namespace st10210396FundeProg3BPOE
                     detailedInfo += $"• {System.IO.Path.GetFileName(filePath)}\n";
                 }
 
-                MessageBox.Show(detailedInfo, "Current Attachments", MessageBoxButtons.OK, MessageBoxIcon.Information); //(Microsoft Learn, 2025). 
+                MessageBox.Show(detailedInfo, "Current Attachments", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No files are currently attached.", "Attachments", MessageBoxButtons.OK, MessageBoxIcon.Information); //(Microsoft Learn, 2025). 
+                MessageBox.Show("No files are currently attached.", "Attachments", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Event handler for category selection change
         }
 
         private void backpictureBox_Click(object sender, EventArgs e)
@@ -160,7 +234,7 @@ namespace st10210396FundeProg3BPOE
         private void HomeMainMenuLabe_Click(object sender, EventArgs e)
         {
             // Find and show the hidden Form1 instance
-            foreach (Form form in Application.OpenForms) //(Open Form2 From Form1 And Hide Form1 And Show Form1 Again After Closing The Form2 | C# Tutorial, 2021). 
+            foreach (Form form in Application.OpenForms)
             {
                 if (form is Form1 && form.Visible == false)
                 {
@@ -174,7 +248,7 @@ namespace st10210396FundeProg3BPOE
         private void backMainButton_Click(object sender, EventArgs e)
         {
             // Find and show the hidden Form1 instance
-            foreach (Form form in Application.OpenForms) //(Open Form2 From Form1 And Hide Form1 And Show Form1 Again After Closing The Form2 | C# Tutorial, 2021). 
+            foreach (Form form in Application.OpenForms)
             {
                 if (form is Form1 && form.Visible == false)
                 {
@@ -184,12 +258,21 @@ namespace st10210396FundeProg3BPOE
             }
             this.Close();
         }
+
+        private void ReportIssues_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LocationtextBox_TextChanged(object sender, EventArgs e)
+        {
+            // Location text changed event
+        }
+
+        private void DescriptionrichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            // Description text changed event
+        }
     }
-  }
 
-
-//Referrnces 
-//Microsoft Learn. (n.d.).OpenFileDialog Class(System.Windows.Forms). [Online].Available at: https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.openfiledialog?view=windowsdesktop-9.0 [Accessed 03 September2025].
-//Microsoft Learn. 2025.How to open a message box, 05 July 2025. Online]. Available at: https://learn.microsoft.com/en-us/dotnet/desktop/wpf/windows/how-to-open-message-box [Accessed 03 September2025].
-//Rohman, J.A. 2023.Using Data Structures in C#: Array, List, and Dictionary, 22 October 2023. [Online]. Available at: https://medium.com/@jamaludinarifr/using-data-structures-in-c-array-list-and-dictionary-1b551926d5ef [Accessed 03 September2025].
-//Open Form2 From Form1 And Hide Form1 And Show Form1 Again After Closing The Form2 | C# Tutorial. 2021. YouTube video. Added by #SmartCode. [Online]. Available at: https://www.youtube.com/watch?v=bb5TaLbq9aM [Accessed 03 September2025].
+}
