@@ -1,0 +1,11 @@
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\bin\Debug\st10210396FundeProg3BPOE.exe.config
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\bin\Debug\st10210396FundeProg3BPOE.exe
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\bin\Debug\st10210396FundeProg3BPOE.pdb
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.csproj.AssemblyReference.cache
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.Form1.resources
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.Properties.Resources.resources
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.ReportIssues.resources
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.csproj.GenerateResource.cache
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.csproj.CoreCompileInputs.cache
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.exe
+C:\Users\lab_services_student\source\repos\st10210396FundeProg3BPOE\st10210396FundeProg3BPOE\obj\Debug\st10210396FundeProg3BPOE.pdb
