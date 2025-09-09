@@ -73,7 +73,11 @@ Each issue report comprises the following components:
 - **Location (string)**: The specific location of the issue.
 - **Category (string)**: The category under which the issue falls.
 - **Description (string)**: A detailed account of the issue being reported.
-- **List of Attachment File Paths (List<string>)**: Contains paths to the files attached with the report.
+- **LinkedList<string> Attachments:**: Holds file paths for attached files.
+- **DateTime ReportDate:** Date of the report.
+- **int ReportNumber:** Unique identifier for the report.
+
+
 
 ## Installation
 
