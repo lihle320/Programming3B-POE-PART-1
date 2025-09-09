@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|c:\\users\\lab_services_student\\source\\repos\\st10210396fundeprog3bpoe\\st10210396fundeprog3bpoe\\reportissues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396fundeprog3bpoe\\reportissues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|solutionrelative:st10210396fundeprog3bpoe\\reportissues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,15 +11,15 @@
       "RelativeMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|solutionrelative:st10210396fundeprog3bpoe\\issuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|solutionrelative:st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396fundeprog3bpoe\\reportissues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|solutionrelative:st10210396fundeprog3bpoe\\reportissues.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|solutionrelative:st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|c:\\users\\lab_services_student\\source\\repos\\st10210396fundeprog3bpoe\\st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0C05988-938C-4FE4-BCAC-985D1EA29CD0}|st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE.csproj|solutionrelative:st10210396fundeprog3bpoe\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,7 +34,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ReportIssues.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE\\ReportIssues.cs",
               "RelativeDocumentMoniker": "st10210396FundeProg3BPOE\\ReportIssues.cs",
@@ -52,20 +52,22 @@
               "RelativeDocumentMoniker": "st10210396FundeProg3BPOE\\Form1.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE\\Form1.cs",
               "RelativeToolTip": "st10210396FundeProg3BPOE\\Form1.cs",
-              "ViewState": "AgIAABUAAACgZmZmZuYnwCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAACbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T13:43:04.058Z"
+              "WhenOpened": "2025-09-05T13:43:04.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE\\Form1.cs",
               "RelativeDocumentMoniker": "st10210396FundeProg3BPOE\\Form1.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE\\Form1.cs [Design]",
               "RelativeToolTip": "st10210396FundeProg3BPOE\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T13:32:21.461Z"
+              "WhenOpened": "2025-09-05T13:32:21.461Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -75,7 +77,7 @@
               "RelativeDocumentMoniker": "st10210396FundeProg3BPOE\\ReportIssues.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE\\ReportIssues.cs",
               "RelativeToolTip": "st10210396FundeProg3BPOE\\ReportIssues.cs",
-              "ViewState": "AgIAALQAAAAAnZmZmVkswBEBAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAMwGIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-05T14:28:58.725Z",
               "EditorCaption": ""
@@ -88,9 +90,10 @@
               "RelativeDocumentMoniker": "st10210396FundeProg3BPOE\\IssueReport.cs",
               "ToolTip": "C:\\Users\\lab_services_student\\source\\repos\\st10210396FundeProg3BPOE\\st10210396FundeProg3BPOE\\IssueReport.cs",
               "RelativeToolTip": "st10210396FundeProg3BPOE\\IssueReport.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA8wBwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAADHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-05T14:11:19.773Z"
+              "WhenOpened": "2025-09-05T14:11:19.773Z",
+              "EditorCaption": ""
             }
           ]
         }
