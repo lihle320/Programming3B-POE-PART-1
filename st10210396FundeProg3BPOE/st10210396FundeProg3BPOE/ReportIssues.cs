@@ -12,27 +12,27 @@ namespace st10210396FundeProg3BPOE
 {
     public partial class ReportIssues : Form
     {
-        private LinkedList<string> currentAttachments; // LinkedList to store attachments for the current report
-        private LinkedList<IssueReport> issueReports; // LinkedList to store reported issues
+        private LinkedList<string> currentAttachments; // LinkedList to store attachments for the current report (Microsoft Learn, n.d.). 
+        private LinkedList<IssueReport> issueReports; // LinkedList to store reported issues (Microsoft Learn, n.d.). 
         private int reportCounter = 0; // Counter to track report numbers
 
         public ReportIssues()
         {
-            currentAttachments = new LinkedList<string>();
-            issueReports = new LinkedList<IssueReport>();
+            currentAttachments = new LinkedList<string>(); //(Microsoft Learn, n.d.). 
+            issueReports = new LinkedList<IssueReport>(); //(Microsoft Learn, n.d.). 
             InitializeComponent();
         }
 
         private void attachFileBtn_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (OpenFileDialog openFileDialog = new OpenFileDialog()) //(Microsoft Learn, n.d.). 
             {
-                openFileDialog.Filter = "Image files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
+                openFileDialog.Filter = "Image files (*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|PDF files (*.pdf)|*.pdf|All files (*.*)|*.*"; //(Microsoft Learn, n.d.). 
                 openFileDialog.Multiselect = true; // Allow multiple file selection
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                if (openFileDialog.ShowDialog() == DialogResult.OK) //(Microsoft Learn, n.d.). 
                 {
-                    foreach (string filePath in openFileDialog.FileNames)
+                    foreach (string filePath in openFileDialog.FileNames) //(Microsoft Learn, n.d.). 
                     {
                         AttachFile(filePath);
                     }
@@ -40,13 +40,13 @@ namespace st10210396FundeProg3BPOE
             }
         }
 
-        private void AttachFile(string filePath)
+        private void AttachFile(string filePath) //(Microsoft Learn, n.d.). 
         {
             // Add the file to current attachments using LinkedList
             currentAttachments.AddLast(filePath);
 
             // Optional: Show the attached file name in the UI
-            MessageBox.Show($"File attached: {System.IO.Path.GetFileName(filePath)}",
+            MessageBox.Show($"File attached: {System.IO.Path.GetFileName(filePath)}", //(Microsoft Learn, n.d.). 
                            "Attachment Added",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Information);
@@ -57,19 +57,19 @@ namespace st10210396FundeProg3BPOE
             // Validate inputs
             if (string.IsNullOrWhiteSpace(LocationtextBox.Text))
             {
-                MessageBox.Show("Please enter a location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a location.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //(Microsoft Learn, 2025)
                 return;
             }
 
             if (CategoryComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Please select a category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a category.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //(Microsoft Learn, 2025)
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(DescriptionrichTextBox.Text))
             {
-                MessageBox.Show("Please enter a description.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter a description.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); //(Microsoft Learn, 2025)
                 return;
             }
 
@@ -87,7 +87,7 @@ namespace st10210396FundeProg3BPOE
                 Location = LocationtextBox.Text,
                 Category = CategoryComboBox.SelectedItem.ToString(),
                 Description = DescriptionrichTextBox.Text,
-                Attachments = new LinkedList<string>(currentAttachments), // Copy current attachments
+                Attachments = new LinkedList<string>(currentAttachments), // Copy current attachments (Microsoft Learn, n.d.). 
                 ReportDate = currentDate, // Store the report date
                 ReportNumber = reportCounter // Store the report number
             };
@@ -117,7 +117,7 @@ namespace st10210396FundeProg3BPOE
                              $"Description: {report.Description}\n\n" +
                              $"Attachments:\n{attachmentInfo}";
 
-            MessageBox.Show(message, "Report Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "Report Submitted", MessageBoxButtons.OK, MessageBoxIcon.Information); //(Microsoft Learn, 2025)
             MessageBox.Show("Thank you for your submission! We appreciate you taking the time to report this issue. Our team will review it and get back to you as soon as possible.", "Thank You", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Clear the fields for the next report
@@ -214,10 +214,10 @@ namespace st10210396FundeProg3BPOE
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Event handler for category selection change
+           
         }
 
-        private void backpictureBox_Click(object sender, EventArgs e)
+        private void backpictureBox_Click(object sender, EventArgs e) //(Open Form2 From Form1 And Hide Form1 And Show Form1 Again After Closing The Form2 | C# Tutorial, 2021). 
         {
             // Find and show the hidden Form1 instance
             foreach (Form form in Application.OpenForms)
@@ -231,7 +231,7 @@ namespace st10210396FundeProg3BPOE
             this.Close();
         }
 
-        private void HomeMainMenuLabe_Click(object sender, EventArgs e)
+        private void HomeMainMenuLabe_Click(object sender, EventArgs e) //(Open Form2 From Form1 And Hide Form1 And Show Form1 Again After Closing The Form2 | C# Tutorial, 2021). 
         {
             // Find and show the hidden Form1 instance
             foreach (Form form in Application.OpenForms)
@@ -266,12 +266,12 @@ namespace st10210396FundeProg3BPOE
 
         private void LocationtextBox_TextChanged(object sender, EventArgs e)
         {
-            // Location text changed event
+         
         }
 
         private void DescriptionrichTextBox_TextChanged(object sender, EventArgs e)
         {
-            // Description text changed event
+            
         }
     }
 
